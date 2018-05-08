@@ -1,0 +1,105 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>更下一层楼</title>
+    <style>
+        #gamePanel {
+            width: 300px;
+            height: 400px;
+            background: url("./img/background.jpg");
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+        }
+
+        #gamePanel .player {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            background: url(img/player.png);
+        }
+
+        #gamePanel .left {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            background: url(img/left.png);
+        }
+
+        #gamePanel .right {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            background: url(img/right.png);
+        }
+
+        #gamePanel .normal {
+            position: absolute;
+            background: url(img/solid.png);
+            overflow: hidden;
+        }
+
+        #gamePanel .miss {
+            position: absolute;
+            background: url(img/hollow.png);
+            overflow: hidden;
+        }
+
+        #gamePanel .flip {
+            position: absolute;
+            background: url(img/bounce.png);
+            overflow: hidden;
+        }
+
+        #gamePanel .thorn {
+            position: absolute;
+            background: url(img/dead.png);
+            overflow: hidden;
+        }
+
+        #gamePanel .score {
+            position: absolute;
+            font-size: 16px;
+            font-weight: 700;
+            color: black;
+            z-index: 999;
+        }
+
+        #startBtn {
+            border-width: 30px;
+            border-style: solid;
+            border-color: #44a6fd #44a6fd #44a6fd #573e7d;
+            position: absolute;
+            left: 140px;
+            top: 180px;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="gamePanel" tabindex="0">
+    <div class="score">当前楼层：<span id="score">0</span>层</div>
+    <div id="startBtn" onclick="Start(this)"></div>
+</div>
+
+<script type="text/javascript">try {
+    document.execCommand("BackgroundImageCache", false, true);
+} catch (e) {
+}</script>
+<script type="text/javascript" src="js/Player.js"></script>
+<script type="text/javascript" src="js/BlockBase.js"></script>
+<script type="text/javascript" src="js/NormalBlock.js"></script>
+<script type="text/javascript" src="js/FlipBlock.js"></script>
+<script type="text/javascript" src="js/ThornBlock.js"></script>
+<script type="text/javascript" src="js/MissBlock.js"></script>
+<script type="text/javascript" src="js/BlockFactory.js"></script>
+<script type="text/javascript" src="js/Game.js"></script>
+</body>
+</html>
